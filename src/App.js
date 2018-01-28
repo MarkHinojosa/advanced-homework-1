@@ -5,12 +5,13 @@ import LeftColumn from './modules/Left-column';
 import Carousel from './modules/Carousel';
 import ProductBox from './modules/ProductBox';
 import Foot from './modules/Footer';
-{/* <ProductBox product={ props.products.products[ind] } */ }
+
+
 const App = (props) => {
-  const test =
+  const items =
     props.products.products.map(
       (cur, ind) => {
-        return <ProductBox product={props.products.products[ind]} />
+        return <ProductBox product={props.products.products[ind]} key={ind} />
       }
     )
 
@@ -20,10 +21,11 @@ const App = (props) => {
       <div className="container">
         <div className="row">
           <LeftColumn />
+         
           <div className="col-md-9">
             <Carousel />
             <div className="row">
-              {test}
+              {items}
             </div>
           </div>
         </div>
